@@ -8,9 +8,15 @@ const bot = new TelegramBot(token, { polling: true });
 bot.onText(/\/start/, (msg) => {
     const chatId = msg.chat.id;
     const responseMessage = 'Chào mừng bạn đến với game của chúng tôi!'; // Thông điệp phản hồi
-    
-    bot.sendMessage(chatId, responseMessage);
+    bot.sendMessage(chatId, responseMessage)
+        .then(() => {
+            console.log(`Sent message to chat ${chatId}`);
+        })
+        .catch(error => {
+            console.error(`Failed to send message: ${error}`);
+        });
 });
+
 
 // Lắng nghe các tin nhắn khác
 bot.on('message', (msg) => {
