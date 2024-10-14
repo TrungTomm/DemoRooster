@@ -7,16 +7,24 @@ const bot = new TelegramBot(token, { polling: true });
 // Lắng nghe lệnh /start
 bot.onText(/\/start/, (msg) => {
     const chatId = msg.chat.id;
-    const responseMessage = 'Chào mừng bạn đến với game của chúng tôi!'; // Thông điệp phản hồi
-    bot.sendMessage(chatId, responseMessage)
-        .then(() => {
-            console.log(`Sent message to chat ${chatId}`);
-        })
-        .catch(error => {
-            console.error(`Failed to send message: ${error}`);
-        });
-});
+    const responseMessage = 'Chào mừng bạn đến với game của chúng tôi!';
 
+    // Tạo nút inline "Play" với liên kết URL
+    const options = {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    {
+                        text: 'Play',
+                        url: 'https://trungtomm.github.io/Rooster-Battle/' // Liên kết đến mini app
+                    }
+                ]
+            ]
+        }
+    };
+
+    bot.sendMessage(chatId, responseMessage, options); // Gửi phản hồi cùng với nút
+});
 
 // Lắng nghe các tin nhắn khác
 bot.on('message', (msg) => {
