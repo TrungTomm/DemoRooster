@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 
 // Thay 'YOUR_TOKEN' bằng token mà bạn nhận được từ BotFather
-const token = '7946886076:AAHi9Y8Orzzbhl5KJODm-0wDSsGtKD9Vhe8';
+const token = '7369974417:AAH_IDoKFSIRFahOv-CNjoCafbLoov_uLWE';
 const bot = new TelegramBot(token, { polling: true });
 
 // Lắng nghe lệnh /start
