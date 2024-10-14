@@ -1,0 +1,552 @@
+{
+    "frames": {
+        "BachLinhKe/Blink": {
+            "frame": {
+                "x": 2,
+                "y": 12,
+                "w": 8,
+                "h": 7
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 8,
+                "h": 7
+            },
+            "sourceSize": {
+                "w": 8,
+                "h": 7
+            }
+        },
+        "BachLinhKe/Body2": {
+            "frame": {
+                "x": 2,
+                "y": 88,
+                "w": 147,
+                "h": 96
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 147,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 147,
+                "h": 96
+            }
+        },
+        "BachLinhKe/Head": {
+            "frame": {
+                "x": 151,
+                "y": 88,
+                "w": 112,
+                "h": 96
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 112,
+                "h": 96
+            },
+            "sourceSize": {
+                "w": 112,
+                "h": 96
+            }
+        },
+        "BachLinhKe/Leg_L": {
+            "frame": {
+                "x": 685,
+                "y": 9,
+                "w": 51,
+                "h": 55
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 51,
+                "h": 55
+            },
+            "sourceSize": {
+                "w": 51,
+                "h": 55
+            }
+        },
+        "BachLinhKe/Leg_R": {
+            "frame": {
+                "x": 661,
+                "y": 212,
+                "w": 51,
+                "h": 55
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 51,
+                "h": 55
+            },
+            "sourceSize": {
+                "w": 51,
+                "h": 55
+            }
+        },
+        "BachLinhKe/Neck2": {
+            "frame": {
+                "x": 265,
+                "y": 94,
+                "w": 137,
+                "h": 98
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 137,
+                "h": 98
+            },
+            "sourceSize": {
+                "w": 137,
+                "h": 98
+            }
+        },
+        "BachLinhKe/Shadow": {
+            "frame": {
+                "x": 2,
+                "y": 21,
+                "w": 184,
+                "h": 65
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 184,
+                "h": 65
+            },
+            "sourceSize": {
+                "w": 184,
+                "h": 65
+            }
+        },
+        "BachLinhKe/Tail": {
+            "frame": {
+                "x": 404,
+                "y": 105,
+                "w": 123,
+                "h": 100
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 123,
+                "h": 100
+            },
+            "sourceSize": {
+                "w": 123,
+                "h": 100
+            }
+        },
+        "BachLinhKe/Thigh_L": {
+            "frame": {
+                "x": 595,
+                "y": 131,
+                "w": 50,
+                "h": 75
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 50,
+                "h": 75
+            },
+            "sourceSize": {
+                "w": 50,
+                "h": 75
+            }
+        },
+        "BachLinhKe/Thigh_R": {
+            "frame": {
+                "x": 627,
+                "y": 58,
+                "w": 50,
+                "h": 71
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 50,
+                "h": 71
+            },
+            "sourceSize": {
+                "w": 50,
+                "h": 71
+            }
+        },
+        "BachLinhKe/Wing1": {
+            "frame": {
+                "x": 188,
+                "y": 4,
+                "w": 94,
+                "h": 82
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 94,
+                "h": 82
+            },
+            "sourceSize": {
+                "w": 94,
+                "h": 82
+            }
+        },
+        "BachLinhKe/Wing2": {
+            "frame": {
+                "x": 2,
+                "y": 186,
+                "w": 183,
+                "h": 81
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 183,
+                "h": 81
+            },
+            "sourceSize": {
+                "w": 183,
+                "h": 81
+            }
+        },
+        "BronzeArmor/armor_bronze_chest": {
+            "frame": {
+                "x": 284,
+                "y": 2,
+                "w": 110,
+                "h": 90
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 110,
+                "h": 90
+            },
+            "sourceSize": {
+                "w": 110,
+                "h": 90
+            }
+        },
+        "BronzeArmor/armor_bronze_helmet": {
+            "frame": {
+                "x": 567,
+                "y": 48,
+                "w": 58,
+                "h": 73
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 58,
+                "h": 73
+            },
+            "sourceSize": {
+                "w": 58,
+                "h": 73
+            }
+        },
+        "BronzeArmor/armor_bronze_leg": {
+            "frame": {
+                "x": 375,
+                "y": 207,
+                "w": 71,
+                "h": 60
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 71,
+                "h": 60
+            },
+            "sourceSize": {
+                "w": 71,
+                "h": 60
+            }
+        },
+        "BronzeArmor/armor_bronze_neck": {
+            "frame": {
+                "x": 627,
+                "y": 6,
+                "w": 56,
+                "h": 50
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 56,
+                "h": 50
+            },
+            "sourceSize": {
+                "w": 56,
+                "h": 50
+            }
+        },
+        "BronzeArmor/armor_bronze_thigh": {
+            "frame": {
+                "x": 699,
+                "y": 142,
+                "w": 49,
+                "h": 68
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 49,
+                "h": 68
+            },
+            "sourceSize": {
+                "w": 49,
+                "h": 68
+            }
+        },
+        "GoldArmor/armor_gold_chest": {
+            "frame": {
+                "x": 187,
+                "y": 194,
+                "w": 113,
+                "h": 73
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 113,
+                "h": 73
+            },
+            "sourceSize": {
+                "w": 113,
+                "h": 73
+            }
+        },
+        "GoldArmor/armor_gold_helmet": {
+            "frame": {
+                "x": 502,
+                "y": 11,
+                "w": 63,
+                "h": 92
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 63,
+                "h": 92
+            },
+            "sourceSize": {
+                "w": 63,
+                "h": 92
+            }
+        },
+        "GoldArmor/armor_gold_leg": {
+            "frame": {
+                "x": 448,
+                "y": 207,
+                "w": 71,
+                "h": 60
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 71,
+                "h": 60
+            },
+            "sourceSize": {
+                "w": 71,
+                "h": 60
+            }
+        },
+        "GoldArmor/armor_gold_neck": {
+            "frame": {
+                "x": 594,
+                "y": 208,
+                "w": 65,
+                "h": 59
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 65,
+                "h": 59
+            },
+            "sourceSize": {
+                "w": 65,
+                "h": 59
+            }
+        },
+        "GoldArmor/armor_gold_thigh": {
+            "frame": {
+                "x": 647,
+                "y": 137,
+                "w": 50,
+                "h": 69
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 50,
+                "h": 69
+            },
+            "sourceSize": {
+                "w": 50,
+                "h": 69
+            }
+        },
+        "SilverArmor/armor_silver_chest": {
+            "frame": {
+                "x": 396,
+                "y": 7,
+                "w": 104,
+                "h": 85
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 104,
+                "h": 85
+            },
+            "sourceSize": {
+                "w": 104,
+                "h": 85
+            }
+        },
+        "SilverArmor/armor_silver_helmet": {
+            "frame": {
+                "x": 529,
+                "y": 123,
+                "w": 64,
+                "h": 82
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 64,
+                "h": 82
+            },
+            "sourceSize": {
+                "w": 64,
+                "h": 82
+            }
+        },
+        "SilverArmor/armor_silver_leg": {
+            "frame": {
+                "x": 521,
+                "y": 207,
+                "w": 71,
+                "h": 60
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 71,
+                "h": 60
+            },
+            "sourceSize": {
+                "w": 71,
+                "h": 60
+            }
+        },
+        "SilverArmor/armor_silver_neck": {
+            "frame": {
+                "x": 302,
+                "y": 198,
+                "w": 71,
+                "h": 69
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 71,
+                "h": 69
+            },
+            "sourceSize": {
+                "w": 71,
+                "h": 69
+            }
+        },
+        "SilverArmor/armor_silver_thigh": {
+            "frame": {
+                "x": 679,
+                "y": 66,
+                "w": 50,
+                "h": 69
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 50,
+                "h": 69
+            },
+            "sourceSize": {
+                "w": 50,
+                "h": 69
+            }
+        }
+    },
+    "meta": {
+        "image": "BachLinhKe.png",
+        "size": {
+            "w": 750,
+            "h": 269
+        },
+        "scale": "1"
+    }
+}

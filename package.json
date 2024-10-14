@@ -1,0 +1,19 @@
+{
+  "name": "c",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@esotericsoftware/spine-phaser": "~4.1.0",
+    "node-telegram-bot-api": "^0.66.0",
+    "phaser": "^3.85.2",
+    "phaser-kinetic-scrolling-plugin": "^1.2.1",
+    "phaser3-rex-plugins": "^1.80.8",
+    "spine": "^1.6.2"
+  }
+}
