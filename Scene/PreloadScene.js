@@ -19,6 +19,8 @@ class PreloadScene extends Phaser.Scene {
     }
 
     create() {
+        const { width, height} = this.scale; 
+        console.log(width + "" + height)
         //Chuyển scene sang scene tiếp theo
         this.scene.start('MainScene');
         this.scene.run('moneyCount');
