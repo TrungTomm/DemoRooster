@@ -19,6 +19,7 @@ import Leg from "./Scene/playerEquipement/Leg.js";
 import LockEq from "./Scene/playerEquipement/LockEq.js";
 import leaderBoard from "./Scene/DownSideBar/leaderBoardButton/leaderBoard.js";
 import leaderBoardPopup from "./Scene/DownSideBar/leaderBoardButton/leaderBoardPopup.js";
+import DpiAdjustmentScene from "./Scene/DpiAdjustmentScene.js";
 
 const config = {
     type: Phaser.AUTO,
@@ -37,6 +38,7 @@ const config = {
     },
     scene: [
         PreloadScene,
+        DpiAdjustmentScene,
         MainScene,
         moneyCount,
         greenHP,
@@ -69,4 +71,3 @@ const config = {
 
 
 new Phaser.Game(config);
-
