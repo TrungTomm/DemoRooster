@@ -7,7 +7,7 @@ class redHP extends Phaser.Scene {
         const { width, height } = this.scale;
 
         //Tao thanh mau do
-        const red_hp = this.add.nineslice(width -150, height -590, 'roosterbattle', 'hp_red', 230, 0, 8, 8);
+        const red_hp = this.add.nineslice(width*(width -150)/width, height*(height -590)/height, 'roosterbattle', 'hp_red', 230, 0, 8, 8);
         red_hp.setOrigin(0,0)
         red_hp.setScale(0.5)
 

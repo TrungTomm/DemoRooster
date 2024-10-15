@@ -7,7 +7,7 @@ class greenHP extends Phaser.Scene {
         const { width, height } = this.scale;
 
         //Tao thanh mau xanh
-        const green_hp = this.add.nineslice(width -385, height - 590, 'roosterbattle', 'hp_green', 230, 0, 8, 8);
+        const green_hp = this.add.nineslice(width*(width -385)/width, height*(height - 590)/height, 'roosterbattle', 'hp_green', 230, 0, 8, 8);
         green_hp.setOrigin(0, 0)
         green_hp.setScale(0.5)
 
