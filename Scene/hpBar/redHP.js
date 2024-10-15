@@ -4,17 +4,20 @@ class redHP extends Phaser.Scene {
     }
 
     create() {
+        const { width, height } = this.scale;
+
         //Tao thanh mau do
-        const red_hp = this.add.nineslice(300, 100, 'roosterbattle', 'hp_red', 150, 0, 8, 8);
-        red_hp.setScale(0.8)
+        const red_hp = this.add.nineslice(width -145, height -590, 'roosterbattle', 'hp_red', 230, 0, 8, 8);
+        red_hp.setOrigin(0,0)
+        red_hp.setScale(0.5)
 
         //Tao text Kelly Baker
-        const red_name = this.add.text(360, 90, 'Kelly Baker', {
+        const red_name = this.add.text(red_hp.x, height - 610, 'Kelly Baker', {
             color: '#FFFFFF',
             fontSize: '15px',
             fontFamily: 'Arial'
 
-        }).setOrigin(1, 1);
+        }).setOrigin(0, 0);
     }
 }
 

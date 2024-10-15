@@ -4,8 +4,10 @@ class rooster2 extends Phaser.Scene {
     }
 
     create() {
+        const { width, height } = this.scale;
+
         //Tao rooster 2
-        const rooster2 = this.add.spine(300, 330, 'rooster2-data', 'rooster2-atlas');
+        const rooster2 = this.add.spine(width -100, height -410, 'rooster2-data', 'rooster2-atlas');
 
         //Them skins cho rooster 2
         const skeletonData2 = rooster2.skeleton.data;
@@ -14,7 +16,7 @@ class rooster2 extends Phaser.Scene {
         skin2.addSkin(skeletonData2.findSkin("gold"))
         rooster2.skeleton.setSkin(skin2);
         rooster2.skeleton.setToSetupPose();
-        rooster2.setScale(-0.6, 0.6)
+        rooster2.setScale(-0.5, 0.5)
 
         //Tao hieu ung cho rooster 2
         rooster2.animationState.setAnimation(0, "idle", true);

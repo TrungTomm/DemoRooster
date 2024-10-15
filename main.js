@@ -22,17 +22,17 @@ import leaderBoardPopup from "./Scene/DownSideBar/leaderBoardButton/leaderBoardP
 
 const config = {
     type: Phaser.AUTO,
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: 460,
+    height: 673,
     physics: {
         default: 'arcade',
         arcade: {
-            gravity: { y: 0 },
+            gravity: { y: 300 },
             debug: false
         }
     },
     scale: {
-        mode: Phaser.Scale.RESIZE, // Sử dụng chế độ RESIZE
+        mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
     scene: [

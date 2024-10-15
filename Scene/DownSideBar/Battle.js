@@ -4,8 +4,9 @@ class Battle extends Phaser.Scene {
     }
 
     create() {
+        const { width, height } = this.scale;
         //Tao back ground
-        const BATTLE_bg = this.add.nineslice(40, 762, 'roosterbattle', 'button_brown_normal', 100, 0, 30, 30)
+        const BATTLE_bg = this.add.nineslice(width -410, height -30, 'roosterbattle', 'button_brown_normal', 130, 0, 30, 30)
         .setInteractive()
         .on('pointerdown', () => console.log(1))
         .on('pointerover', () => BATTLE_bg.setAlpha(0.5))
@@ -14,9 +15,9 @@ class Battle extends Phaser.Scene {
         BATTLE_bg.setScale(0.6);
 
         //Tao chu
-        const BATTLE = this.add.text(25, 753, 'Battle', {
+        const BATTLE = this.add.text(BATTLE_bg.x -17, BATTLE_bg.y -8, 'Battle', {
             color: '#FFFFFF',
-            fontSize: 11,
+            fontSize: '13px',
             fontFamily: 'Arial'
 
         })
