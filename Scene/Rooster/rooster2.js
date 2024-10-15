@@ -16,7 +16,7 @@ class rooster2 extends Phaser.Scene {
         skin2.addSkin(skeletonData2.findSkin("gold"))
         rooster2.skeleton.setSkin(skin2);
         rooster2.skeleton.setToSetupPose();
-        rooster2.setScale(-0.5, 0.5)
+        rooster2.setScale(-0.6, 0.6)
 
         //Tao hieu ung cho rooster 2
         rooster2.animationState.setAnimation(0, "idle", true);
