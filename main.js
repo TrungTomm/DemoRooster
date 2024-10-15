@@ -22,8 +22,8 @@ import leaderBoardPopup from "./Scene/DownSideBar/leaderBoardButton/leaderBoardP
 
 const config = {
     type: Phaser.AUTO,
-    width: 460,
-    height: 673,
+    width: innerWidth,
+    height: innerHeight,
     physics: {
         default: 'arcade',
         arcade: {
@@ -32,7 +32,7 @@ const config = {
         }
     },
     scale: {
-        mode: Phaser.Scale.FIT,
+        mode: Phaser.Scale.RESIZE,
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
     scene: [
