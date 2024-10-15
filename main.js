@@ -23,8 +23,8 @@ import DpiAdjustmentScene from "./Scene/DpiAdjustmentScene.js";
 
 const config = {
     type: Phaser.AUTO,
-    width: 420,
-    height: 690,
+    width: window.innerWidth,
+    height: window.innerHeight,
     physics: {
         default: 'arcade',
         arcade: {
@@ -33,7 +33,7 @@ const config = {
         }
     },
     scale: {
-        mode: Phaser.Scale.FIT,
+        mode: Phaser.Scale.RESIZE,
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
     scene: [
