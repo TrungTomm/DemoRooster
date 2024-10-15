@@ -1,8 +1,8 @@
 class leaderBoardPopup extends Phaser.Scene {
     constructor() {
         super('leaderBoardPopup');
-        this.scrollY = 0;       // Vị trí cuộn hiện tại
-        this.scrollTargetY = 0; // Vị trí mục tiêu để cuộn đến
+        this.scrollY = 120;       // Vị trí cuộn hiện tại
+        this.scrollTargetY = 120; // Vị trí mục tiêu để cuộn đến
         this.easeFactor = 0.08; // Hệ số easing để làm cho cuộn mượt hơn
     }
 
@@ -46,7 +46,7 @@ class leaderBoardPopup extends Phaser.Scene {
 
         // Tạo mask để giới hạn vùng cuộn
         const maskShape = this.add.graphics();
-        maskShape.fillRect(width - 390, height - (673-85), width - 110, height -200); // Giới hạn cuộn
+        maskShape.fillRect(width - 367, height - 588, width - 60, height -230); // Giới hạn cuộn
         const mask = maskShape.createGeometryMask();
         this.scrollContainer.setMask(mask);
 
@@ -73,35 +73,35 @@ class leaderBoardPopup extends Phaser.Scene {
 
         // Thêm các dòng vào bảng xếp hạng
         for (let i = 0; i < 25; i++) {
-            let row = this.add.nineslice(width -390, i * 60, 'roosterbattle', 'rank_row_bg', 630, 0, 50, 50);
+            let row = this.add.nineslice(width -365, i * 60, 'roosterbattle', 'rank_row_bg', 630, 0, 50, 50);
             row.setOrigin(0, 0).setScale(0.5);
             this.scrollContainer.add(row);
             contentHeight += row.displayHeight;
 
             // Thêm huy chương và thông tin người chơi cho 3 thứ hạng đầu
             if (i === 0) {
-                const goldMedal = this.add.image(width-368, i * 60 + 27, 'roosterbattle', 'medal_1').setScale(0.5);
-                const playerTitle = this.add.text(width -280, i * 60 + 7, this.apiData.title.toString(), {
+                const goldMedal = this.add.image(width-343, i * 60 + 27, 'roosterbattle', 'medal_1').setScale(0.5);
+                const playerTitle = this.add.text(width -255, i * 60 + 7, this.apiData.title.toString(), {
                     fontSize: '15px',
                     fill: '#FFFFFF',
                     fontFamily: 'Arial'
                 });
-                const ELO = this.add.text(width -240, i * 60 + 26, 'ELO: ' + this.apiData.userId.toString(), {
+                const ELO = this.add.text(width -220, i * 60 + 26, 'ELO: ' + this.apiData.userId.toString(), {
                     fontSize: '15px',
                     fill: '#fcdf03',
                     fontFamily: 'Arial'
                 });
                 this.scrollContainer.add([goldMedal, playerTitle, ELO]);    
             } else if (i === 1) {
-                const silverMedal = this.add.image(width-368, i * 60 + 27, 'roosterbattle', 'medal_2').setScale(0.5);
+                const silverMedal = this.add.image(width-343, i * 60 + 27, 'roosterbattle', 'medal_2').setScale(0.5);
                 this.scrollContainer.add(silverMedal);
             } else if (i === 2) {
-                const bronzeMedal = this.add.image(width-368, i * 60 + 27, 'roosterbattle', 'medal_3').setScale(0.5);
+                const bronzeMedal = this.add.image(width-343, i * 60 + 27, 'roosterbattle', 'medal_3').setScale(0.5);
                 this.scrollContainer.add(bronzeMedal);
             }
 
             // Thêm số thứ tự và các chi tiết khác
-            const rankNumber = this.add.text(width -373, i * 60 + 16, (i + 1).toString(), {
+            const rankNumber = this.add.text(width -348, i * 60 + 16, (i + 1).toString(), {
                 fontSize: '18px',
                 fill: '#FFFFFF',
                 fontFamily: 'Arial'
@@ -109,19 +109,20 @@ class leaderBoardPopup extends Phaser.Scene {
             this.scrollContainer.add(rankNumber);
         }
         // Add player rank row vào cuối cùng của bảng xếp hạng
-        const rank_player = this.add.nineslice(width -390, height -110, 'roosterbattle', 'rank_row_player_bg', 630, 0, 50, 50);
+        const rank_player = this.add.nineslice(width -365, height -125, 'roosterbattle', 'rank_row_player_bg', 630, 0, 50, 50);
         rank_player.setOrigin(0, 0);
         rank_player.setScale(0.5);
 
-        const rankPlayerNumber = this.add.text(width -383, height -93, '119', {
+        const rankPlayerNumber = this.add.text(width -358, height -110, '119', {
             fontSize: '18px',
             fill: '#FFFFFF',
             fontFamily: 'Arial'
         })
 
         // Tính toán chiều cao nội dung và giới hạn cuộn
-        this.contentHeight = contentHeight + 85;
-        this.minScrollY = 120 - (this.contentHeight - 380);
+        this.contentHeight = contentHeight;
+        console.log(contentHeight)
+        this.minScrollY = 120-(this.contentHeight - 295);
     }
 
     update() {
@@ -129,7 +130,7 @@ class leaderBoardPopup extends Phaser.Scene {
         this.scrollY += (this.scrollTargetY - this.scrollY) * this.easeFactor;
 
         // Giới hạn vị trí cuộn
-        const maxScrollY = 85;
+        const maxScrollY = 105;
         if (this.scrollY > maxScrollY) this.scrollY = maxScrollY;
         if (this.scrollY < this.minScrollY) this.scrollY = this.minScrollY;
 

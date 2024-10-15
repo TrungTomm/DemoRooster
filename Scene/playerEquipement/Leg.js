@@ -5,7 +5,7 @@ class Leg extends Phaser.Scene {
     create() {
         const { width, height } = this.scale;
 
-        const eq_down = this.add.image(width -330 +10, height - 230 + 120, 'roosterbattle', 'equip_none_bg')
+        const eq_down = this.add.image(width -300, height - 230 + 120, 'roosterbattle', 'equip_none_bg')
         .setInteractive()
         .on('pointerdown', () => console.log(1))
         eq_down.setScale(0.55)

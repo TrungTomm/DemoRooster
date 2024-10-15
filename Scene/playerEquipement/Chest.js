@@ -5,7 +5,7 @@ class Chest extends Phaser.Scene {
     create() {
         const { width, height } = this.scale;
 
-        const eq_mid = this.add.image(width -330 +10, height -230 + 60 , 'roosterbattle', 'equip_none_bg')
+        const eq_mid = this.add.image(width -300 , height -230 + 60 , 'roosterbattle', 'equip_none_bg')
         .setInteractive()
         .on('pointerdown', () => console.log(1))
         eq_mid.setScale(0.55)

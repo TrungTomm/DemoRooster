@@ -5,7 +5,7 @@ class Thigh extends Phaser.Scene {
     create() {
         const { width, height } = this.scale;
 
-        const eq_right = this.add.image(width -330 + 70, height -230 + 60, 'roosterbattle', 'equip_none_bg')
+        const eq_right = this.add.image(width -240, height -230 + 60, 'roosterbattle', 'equip_none_bg')
         .setInteractive()
         .on('pointerdown', () => console.log(1))
         eq_right.setScale(0.55)

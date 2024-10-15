@@ -5,7 +5,7 @@ class Neck extends Phaser.Scene {
     create() {
         const { width, height } = this.scale;
 
-        const eq_left = this.add.image(width -330 - 50, height -230 + 60, 'roosterbattle', 'equip_none_bg')
+        const eq_left = this.add.image(width -360, height -230 + 60, 'roosterbattle', 'equip_none_bg')
         .setInteractive()
         .on('pointerdown', () => console.log(1))
         eq_left.setScale(0.55)
