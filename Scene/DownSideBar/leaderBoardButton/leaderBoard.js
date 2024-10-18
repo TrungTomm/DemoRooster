@@ -7,19 +7,18 @@ class leaderBoard extends Phaser.Scene {
         const { width, height } = this.scale;
 
         //Tao back ground
-        const LEADERBOARD_bg = this.add.nineslice(width -115, height -30, 'roosterbattle', 'button_brown_normal', 110, 0, 30, 30)
+        const LEADERBOARD_bg = this.add.nineslice(510, 1225, 'roosterbattle', 'button_brown_normal', 110, 0, 30, 30)
             .setInteractive()
             .on('pointerover', () => LEADERBOARD_bg.setAlpha(0.5))
             .on('pointerout', () => LEADERBOARD_bg.setAlpha(1))
             .on('pointerdown', () => this.scene.run('leaderBoardPopup'))
-        LEADERBOARD_bg.setScale(0.6);
 
         //Tao chu
-        const LEADERBOARD = this.add.text(LEADERBOARD_bg.x -32, LEADERBOARD_bg.y-8, 'Leaderboard', {
+        const LEADERBOARD = this.add.text(LEADERBOARD_bg.x, LEADERBOARD_bg.y, 'Leaderboard', {
             color: '#FFFFFF',
-            fontSize: '11px',
+            fontSize: '19px',
             fontFamily: 'Arial'
-        });
+        }).setOrigin(0.5,0.5);
     }
 
     update() {}

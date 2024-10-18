@@ -5,12 +5,9 @@ class LockEq extends Phaser.Scene {
     create() {
         const { width, height } = this.scale;
 
-        const eq_lock_up = this.add.image(width - 90, height -230, 'roosterbattle', 'equip_lock_bg');
-        eq_lock_up.setScale(0.55)
-        const eq_lock_mid = this.add.image(eq_lock_up.x, eq_lock_up.y + 60, 'roosterbattle', 'equip_lock_bg');
-        eq_lock_mid.setScale(0.55)
-        const eq_lock_down = this.add.image(eq_lock_up.x, eq_lock_up.y + 120, 'roosterbattle', 'equip_lock_bg');
-        eq_lock_down.setScale(0.55)
+        const eq_lock_up = this.add.image(570, 850, 'roosterbattle', 'equip_lock_bg');
+        const eq_lock_mid = this.add.image(eq_lock_up.x, eq_lock_up.y + 110, 'roosterbattle', 'equip_lock_bg');
+        const eq_lock_down = this.add.image(eq_lock_up.x, eq_lock_mid.y + 110, 'roosterbattle', 'equip_lock_bg');
     }
     update() { }
 }

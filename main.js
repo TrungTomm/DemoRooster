@@ -23,10 +23,8 @@ import DpiAdjustmentScene from "./Scene/DpiAdjustmentScene.js";
 
 const config = {
     type: Phaser.AUTO,
-    width: window.innerWidth,
-    height: window.innerHeight,
-    pixelArt: false, // Để tránh bị vỡ khi scale, nên đặt false
-    antialias: true, // Bật khử răng cưa
+    width: 720,
+    height: 1280,
     physics: {
         default: 'arcade',
         arcade: {
@@ -35,7 +33,7 @@ const config = {
         }
     },
     scale: {
-        mode: Phaser.Scale.RESIZE,
+        mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
     },
     scene: [

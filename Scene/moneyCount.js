@@ -6,20 +6,18 @@ class moneyCount extends Phaser.Scene {
         const { width, height } = this.scale;
 
         //Tao vien ben canh Rcoin to
-        const Rcoin_bar = this.add.nineslice(width -390, height - 670, 'roosterbattle', 'currency_bg', 150, 0, 10, 10).setOrigin(0, 0);
-        Rcoin_bar.setScale(0.65)
+        const currency_bg = this.add.nineslice(150, 60, 'roosterbattle', 'currency_bg', 150, 0, 10, 10).setOrigin(0.5, 0.5);
 
         //Tao Rcoin to phia tren screen
-        const Rcoin = this.add.image(width -380, height - 660, 'roosterbattle', 'token_rgold_big');
-        Rcoin.setScale(0.3)
+        const token_rgold_big = this.add.nineslice(70, 60, 'roosterbattle', 'token_rgold_big', 70, 70, 3, 3, 3, 3);
 
         // //Tao tien
-        const money_up = this.add.text( width -345, Rcoin_bar.y +2, '100', {
+        const money_up = this.add.text(width - 345, 2, '100', {
             color: '#FFFFFF',
             fontFamily: 'Arial'
         })
     }
-    update(){}
+    update() { }
 }
 
 export default moneyCount;

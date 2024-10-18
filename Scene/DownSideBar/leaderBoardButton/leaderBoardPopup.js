@@ -1,8 +1,8 @@
 class leaderBoardPopup extends Phaser.Scene {
     constructor() {
         super('leaderBoardPopup');
-        this.scrollY = 120;       // Vị trí cuộn hiện tại
-        this.scrollTargetY = 120; // Vị trí mục tiêu để cuộn đến
+        this.scrollY = 270;       // Vị trí cuộn hiện tại
+        this.scrollTargetY = 270; // Vị trí mục tiêu để cuộn đến
         this.easeFactor = 0.08; // Hệ số easing để làm cho cuộn mượt hơn
     }
 
@@ -20,23 +20,22 @@ class leaderBoardPopup extends Phaser.Scene {
             this.scene.stop(); // Đóng popup khi nhấn vào overlay
         });
         // Add popup background
-        const popup_bg = this.add.nineslice(width/2, height/2, 'roosterbattle', 'popup_bg', 710, 1150, 50, 50, 50, 50);
-        popup_bg.setScale(0.5);
+        const popup_bg = this.add.nineslice(width/2, height/2, 'roosterbattle', 'popup_bg', 650, 980, 50, 50, 50, 50);
         popup_bg.setInteractive();
         popup_bg.on('pointerdown', (event) => event.stopPropagation());
 
-        const tap = this.add.text(width/2, height-30, 'Tap to close', {
+        const tap = this.add.text(width/2, 1190, 'Tap to close', {
             color: '#FFFFFF',
-            fontSize: 20,
+            fontSize: 37,
             fontFamily: 'Arial',
         }).setAlpha(1.5)
         .setOrigin(0.5,0.5);
 
         // Add pop-up title
-        const pu_title = this.add.nineslice(width / 2, height - 620, 'roosterbattle', 'popup_title_bg', 400, 0, 70, 70).setScale(0.5);
+        const pu_title = this.add.nineslice(width / 2, 150, 'roosterbattle', 'popup_title_bg', 400, 0, 70, 70);
         const title = this.add.text(width/2, pu_title.y, 'Leaderboard', {
             color: '#FFFFFF',
-            fontSize: 20,
+            fontSize: 37,
             fontFamily: 'Arial'
         }).setOrigin(0.5,0.5);
 
@@ -45,7 +44,7 @@ class leaderBoardPopup extends Phaser.Scene {
 
         // Tạo mask để giới hạn vùng cuộn
         const maskShape = this.add.graphics();
-        maskShape.fillRect(width - 367, height - 588, width - 60, height -230); // Giới hạn cuộn
+        maskShape.fillRect(50, 200, 650, 800); // Giới hạn cuộn
         const mask = maskShape.createGeometryMask();
         this.scrollContainer.setMask(mask);
 
@@ -72,64 +71,64 @@ class leaderBoardPopup extends Phaser.Scene {
 
         // Thêm các dòng vào bảng xếp hạng
         for (let i = 0; i < 25; i++) {
-            let row = this.add.nineslice(width -365, i * 60, 'roosterbattle', 'rank_row_bg', 630, 0, 50, 50);
-            row.setOrigin(0, 0).setScale(0.5);
+            let row = this.add.nineslice(width/2, i * 115, 'roosterbattle', 'rank_row_bg', 550, 0, 50, 50);
+            row.setOrigin(0.5, 0.5);
             this.scrollContainer.add(row);
             contentHeight += row.displayHeight;
 
             // Thêm huy chương và thông tin người chơi cho 3 thứ hạng đầu
             if (i === 0) {
-                const goldMedal = this.add.image(width-343, i * 60 + 27, 'roosterbattle', 'medal_1').setScale(0.5);
-                const playerTitle = this.add.text(width -255, i * 60 + 7, this.apiData.title.toString(), {
-                    fontSize: '15px',
+                const goldMedal = this.add.image(125, i * 70, 'roosterbattle', 'medal_1');
+                const playerTitle = this.add.text(width/2+10, i * 60 - 20 , this.apiData.title.toString(), {
+                    fontSize: '29px',
+                    fill: '#FFFFFF',
+                    fontFamily: 'Arial'
+                }).setOrigin(0.5, 0.5);
+                const ELO = this.add.text(width/2 +10, i * 60 + 20, 'ELO: ' + this.apiData.userId.toString(), {
+                    fontSize: '29px',
+                    fill: '#fcdf03',
+                    fontFamily: 'Arial'
+                }).setOrigin(0.5,0.5);
+                const rankNumber1 = this.add.text(115, i * 80 - 20, (i + 1).toString(), {
+                    fontSize: '29px',
                     fill: '#FFFFFF',
                     fontFamily: 'Arial'
                 });
-                const ELO = this.add.text(width -220, i * 60 + 26, 'ELO: ' + this.apiData.userId.toString(), {
-                    fontSize: '15px',
-                    fill: '#fcdf03',
+                this.scrollContainer.add([goldMedal, playerTitle, ELO, rankNumber1]);    
+            } else if (i === 1) {
+                const silverMedal = this.add.image(125, i * 115, 'roosterbattle', 'medal_2');
+                const rankNumber2 = this.add.text(115, i * 100 , (i + 1).toString(), {
+                    fontSize: '29px',
+                    fill: '#FFFFFF',
                     fontFamily: 'Arial'
                 });
-                this.scrollContainer.add([goldMedal, playerTitle, ELO]);    
-            } else if (i === 1) {
-                const silverMedal = this.add.image(width-343, i * 60 + 27, 'roosterbattle', 'medal_2').setScale(0.5);
-                this.scrollContainer.add(silverMedal);
+                this.scrollContainer.add([silverMedal, rankNumber2]);
             } else if (i === 2) {
-                const bronzeMedal = this.add.image(width-343, i * 60 + 27, 'roosterbattle', 'medal_3').setScale(0.5);
-                this.scrollContainer.add(bronzeMedal);
+                const bronzeMedal = this.add.image(125, i * 115, 'roosterbattle', 'medal_3');
+                const rankNumber3 = this.add.text(115, i * 105 , (i + 1).toString(), {
+                    fontSize: '29px',
+                    fill: '#FFFFFF',
+                    fontFamily: 'Arial'
+                });
+                this.scrollContainer.add([bronzeMedal, rankNumber3]);
             }
 
-            // Thêm số thứ tự và các chi tiết khác
-            const rankNumber = this.add.text(width -348, i * 60 + 16, (i + 1).toString(), {
-                fontSize: '18px',
-                fill: '#FFFFFF',
-                fontFamily: 'Arial'
-            });
-            this.scrollContainer.add(rankNumber);
-        }
         // Add player rank row vào cuối cùng của bảng xếp hạng
-        const rank_player = this.add.nineslice(width -365, height -125, 'roosterbattle', 'rank_row_player_bg', 630, 0, 50, 50);
-        rank_player.setOrigin(0, 0);
-        rank_player.setScale(0.5);
-
-        const rankPlayerNumber = this.add.text(width -358, height -110, '119', {
-            fontSize: '18px',
-            fill: '#FFFFFF',
-            fontFamily: 'Arial'
-        })
+        const rank_player = this.add.nineslice(width/2, 1065, 'roosterbattle', 'rank_row_player_bg', 550, 0, 50, 50);
+        rank_player.setOrigin(0.5, 0.5);
 
         // Tính toán chiều cao nội dung và giới hạn cuộn
         this.contentHeight = contentHeight;
-        console.log(contentHeight)
-        this.minScrollY = 120-(this.contentHeight - 295);
+        this.minScrollY = 120-(this.contentHeight - 750);
     }
+}
 
     update() {
         // Áp dụng easing để di chuyển scrollContainer từ vị trí hiện tại đến vị trí mục tiêu
         this.scrollY += (this.scrollTargetY - this.scrollY) * this.easeFactor;
 
         // Giới hạn vị trí cuộn
-        const maxScrollY = 105;
+        const maxScrollY = 270;
         if (this.scrollY > maxScrollY) this.scrollY = maxScrollY;
         if (this.scrollY < this.minScrollY) this.scrollY = this.minScrollY;
 

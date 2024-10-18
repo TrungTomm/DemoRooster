@@ -5,25 +5,22 @@ class Chest extends Phaser.Scene {
     create() {
         const { width, height } = this.scale;
 
-        const eq_mid = this.add.image(width -300 , height -230 + 60 , 'roosterbattle', 'equip_none_bg')
+        const eq_mid = this.add.image(230 , 960 , 'roosterbattle', 'equip_none_bg')
         .setInteractive()
         .on('pointerdown', () => console.log(1))
-        eq_mid.setScale(0.55)
         
         //Tao background mau cho cac o trang bi
         const eq_bg_mid = this.add.image(eq_mid.x, eq_mid.y, 'roosterbattle', 'equip_rarity_green');
-        eq_bg_mid.setScale(0.55)
 
         //Tao trang bi cho rooster
         const eq_wep_mid = this.add.image(eq_mid.x, eq_mid.y, 'BachLinhKe', 'BronzeArmor/armor_bronze_chest')
-        eq_wep_mid.setScale(0.54)
 
         //Tao text level cho cac trang bi
-        const level_mid = this.add.text(eq_mid.x-12, eq_mid.y +14, 'Lv.1', {
+        const level_mid = this.add.text(eq_mid.x, eq_mid.y +40, 'Lv.1', {
             color: '#FFFFFF',
-            fontSize: 15,
+            fontSize: 29,
             fontFamily: 'Arial'
-        });
+        }).setOrigin(0.5,0.5);
     }
     update() { }
 }

@@ -7,21 +7,19 @@ class Upgrade extends Phaser.Scene {
         const { width, height } = this.scale;
 
         //Tao back ground
-        const UPGRADE_bg = this.add.nineslice(width -305, height - 30, 'roosterbattle', 'button_brown_normal', 110, 0, 30, 30)
+        const UPGRADE_bg = this.add.nineslice(210, 1225, 'roosterbattle', 'button_brown_normal', 110, 0, 30, 30)
         .setInteractive()
-        .on('pointerdown', () => console.log(1))
         .on('pointerover', () => UPGRADE_bg.setAlpha(0.5))
         .on('pointerout', () => UPGRADE_bg.setAlpha(1))
 
-        UPGRADE_bg.setScale(0.6);
 
-        //Tao chu
-        const UPGRADE = this.add.text(UPGRADE_bg.x -22, UPGRADE_bg.y -8, 'Upgrade', {
+        // //Tao chu
+        const UPGRADE = this.add.text(UPGRADE_bg.x , UPGRADE_bg.y , 'Upgrade', {
             color: '#FFFFFF',
-            fontSize: '11px',
+            fontSize: '19px',
             fontFamily: 'Arial'
 
-        });
+        }).setOrigin(0.5,0.5);
     }
 
     update() { }
