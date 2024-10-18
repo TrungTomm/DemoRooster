@@ -19,7 +19,6 @@ class leaderBoardPopup extends Phaser.Scene {
         overlay.on('pointerdown', () => {
             this.scene.stop(); // Đóng popup khi nhấn vào overlay
         });
-
         // Add popup background
         const popup_bg = this.add.nineslice(width/2, height/2, 'roosterbattle', 'popup_bg', 710, 1150, 50, 50, 50, 50);
         popup_bg.setScale(0.5);
