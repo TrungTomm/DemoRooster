@@ -7,7 +7,7 @@ class rooster1 extends Phaser.Scene {
         const { width, height } = this.scale;
 
         //Them rooster 1
-        const rooster1 = this.add.spine(width*(width - 330)/width, height*(height -410)/height, 'rooster1-data', 'rooster1-atlas');
+        const rooster1 = this.add.spine(width - 330, height -410, 'rooster1-data', 'rooster1-atlas');
         rooster1.setScale(0.55)
 
         //Them skins cho rooster 1
