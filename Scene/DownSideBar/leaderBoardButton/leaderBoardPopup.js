@@ -59,13 +59,13 @@ class leaderBoardPopup extends Phaser.Scene {
 
         // Thiết lập sự kiện cuộn bằng bánh xe chuột
         this.input.on('wheel', (pointer, gameObjects, deltaX, deltaY) => {
-            this.scrollTargetY -= deltaY * 0.8;  // Điều chỉnh vị trí mục tiêu để cuộn đến
+            this.scrollTargetY -= deltaY * 1;  // Điều chỉnh vị trí mục tiêu để cuộn đến
         });
         // Thêm sự kiện cho con trỏ chuột
         this.input.on('pointermove', (pointer) => {
             if (pointer.isDown) {
                 // Nếu con trỏ chuột đang nhấn, cập nhật vị trí mục tiêu dựa trên vị trí chuột
-                this.scrollTargetY += pointer.velocity.y * 0.8;  // Tinh chỉnh hệ số để điều chỉnh độ nhạy
+                this.scrollTargetY += pointer.velocity.y * 1;  // Tinh chỉnh hệ số để điều chỉnh độ nhạy
             }
         });
     }
