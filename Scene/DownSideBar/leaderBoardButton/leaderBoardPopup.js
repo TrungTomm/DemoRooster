@@ -4,6 +4,11 @@ class leaderBoardPopup extends Phaser.Scene {
         this.scrollY = 270;       // Vị trí cuộn hiện tại
         this.scrollTargetY = 270; // Vị trí mục tiêu để cuộn đến
         this.easeFactor = 0.08; // Hệ số easing để làm cho cuộn mượt hơn
+
+        // Biến để theo dõi việc kéo (cho mobile)
+        this.isDragging = false;
+        this.dragStartY = 0;       // Tọa độ y khi bắt đầu kéo
+        this.dragOffsetY = 0;      // Khoảng cách đã kéo
     }
 
     preload() { }
@@ -28,7 +33,7 @@ class leaderBoardPopup extends Phaser.Scene {
             color: '#FFFFFF',
             fontSize: 37,
             fontFamily: 'Arial',
-        }).setAlpha(1.5)
+        }).setAlpha(1)
             .setOrigin(0.5, 0.5);
 
         // Add pop-up title
@@ -60,6 +65,24 @@ class leaderBoardPopup extends Phaser.Scene {
         // Thiết lập sự kiện cuộn bằng bánh xe chuột
         this.input.on('wheel', (pointer, gameObjects, deltaX, deltaY) => {
             this.scrollTargetY -= deltaY * 0.6;  // Điều chỉnh vị trí mục tiêu để cuộn đến
+        });
+
+        // Thiết lập sự kiện cuộn bằng cảm ứng (cho mobile)
+        this.input.on('pointerdown', (pointer) => {
+            this.isDragging = true;
+            this.dragStartY = pointer.y;      // Lưu lại tọa độ y khi bắt đầu chạm vào màn hình
+        });
+
+        this.input.on('pointermove', (pointer) => {
+            if (this.isDragging) {
+                this.dragOffsetY = pointer.y - this.dragStartY; // Tính toán khoảng cách kéo
+                this.scrollTargetY += this.dragOffsetY; // Điều chỉnh vị trí cuộn mục tiêu
+                this.dragStartY = pointer.y; // Cập nhật lại tọa độ cho lần kéo tiếp theo
+            }
+        });
+
+        this.input.on('pointerup', () => {
+            this.isDragging = false; // Khi thả tay ra thì dừng kéo
         });
     }
 
@@ -111,7 +134,7 @@ class leaderBoardPopup extends Phaser.Scene {
                     fontFamily: 'Arial'
                 });
                 this.scrollContainer.add([bronzeMedal, rankNumber3]);
-            } 
+            }
 
             // Add player rank row vào cuối cùng của bảng xếp hạng
             const rank_player = this.add.nineslice(width / 2, 1065, 'roosterbattle', 'rank_row_player_bg', 550, 0, 50, 50);
