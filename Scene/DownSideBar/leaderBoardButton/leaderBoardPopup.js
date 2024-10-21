@@ -4,11 +4,6 @@ class leaderBoardPopup extends Phaser.Scene {
         this.scrollY = 270;       // Vị trí cuộn hiện tại
         this.scrollTargetY = 270; // Vị trí mục tiêu để cuộn đến
         this.easeFactor = 0.08; // Hệ số easing để làm cho cuộn mượt hơn
-
-        // Biến để theo dõi việc kéo (cho mobile)
-        this.isDragging = false;
-        this.dragStartY = 0;       // Tọa độ y khi bắt đầu kéo
-        this.dragOffsetY = 0;      // Khoảng cách đã kéo
     }
 
     preload() { }
@@ -66,23 +61,12 @@ class leaderBoardPopup extends Phaser.Scene {
         this.input.on('wheel', (pointer, gameObjects, deltaX, deltaY) => {
             this.scrollTargetY -= deltaY * 0.6;  // Điều chỉnh vị trí mục tiêu để cuộn đến
         });
-
-        // Thiết lập sự kiện cuộn bằng cảm ứng (cho mobile)
-        this.input.on('pointerdown', (pointer) => {
-            this.isDragging = true;
-            this.dragStartY = pointer.y;      // Lưu lại tọa độ y khi bắt đầu chạm vào màn hình
-        });
-
+        // Thêm sự kiện cho con trỏ chuột
         this.input.on('pointermove', (pointer) => {
-            if (this.isDragging) {
-                this.dragOffsetY = pointer.y - this.dragStartY; // Tính toán khoảng cách kéo
-                this.scrollTargetY += this.dragOffsetY; // Điều chỉnh vị trí cuộn mục tiêu
-                this.dragStartY = pointer.y; // Cập nhật lại tọa độ cho lần kéo tiếp theo
+            if (pointer.isDown) {
+                // Nếu con trỏ chuột đang nhấn, cập nhật vị trí mục tiêu dựa trên vị trí chuột
+                this.scrollTargetY += pointer.velocity.y * 0.7;  // Tinh chỉnh hệ số để điều chỉnh độ nhạy
             }
-        });
-
-        this.input.on('pointerup', () => {
-            this.isDragging = false; // Khi thả tay ra thì dừng kéo
         });
     }
 
@@ -170,6 +154,7 @@ class leaderBoardPopup extends Phaser.Scene {
 
         // Giới hạn vị trí cuộn
         const maxScrollY = 270;
+        this.minScrollY = 120 - (this.contentHeight - 750); // Giới hạn dưới, đảm bảo có nội dung
 
         // Nếu kéo vượt qua giới hạn trên, đặt lại vị trí mục tiêu về giới hạn trên
         if (this.scrollY > maxScrollY) {
