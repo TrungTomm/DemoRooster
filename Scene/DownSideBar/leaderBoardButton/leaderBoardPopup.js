@@ -10,29 +10,6 @@ class leaderBoardPopup extends Phaser.Scene {
 
     create() {
         const { width, height } = this.scale;
-        // Biến lưu trạng thái kéo (drag)
-        this.isDragging = false;       // Trạng thái có đang kéo hay không
-        this.dragStartY = 0;           // Vị trí bắt đầu của ngón tay khi kéo
-        this.containerStartY = 0;      // Vị trí của scrollContainer khi bắt đầu kéo
-
-        // Thiết lập sự kiện kéo để hỗ trợ cuộn trên điện thoại
-        this.input.on('pointerdown', (pointer) => {
-            this.isDragging = true;
-            this.dragStartY = pointer.y;
-            this.containerStartY = this.scrollY; // Ghi lại vị trí container tại thời điểm bắt đầu kéo
-        });
-
-        this.input.on('pointermove', (pointer) => {
-            if (this.isDragging) {
-                const deltaY = pointer.y - this.dragStartY;
-                this.scrollTargetY = this.containerStartY + deltaY; // Điều chỉnh vị trí mục tiêu để cuộn theo độ dài kéo
-            }
-        });
-
-        this.input.on('pointerup', () => {
-            this.isDragging = false; // Dừng kéo
-        });
-
 
         // Overlay để làm nổi bật bảng xếp hạng
         const overlay = this.add.graphics();
