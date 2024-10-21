@@ -59,13 +59,13 @@ class leaderBoardPopup extends Phaser.Scene {
 
         // Thiết lập sự kiện cuộn bằng bánh xe chuột
         this.input.on('wheel', (pointer, gameObjects, deltaX, deltaY) => {
-            this.scrollTargetY -= deltaY * 0.6;  // Điều chỉnh vị trí mục tiêu để cuộn đến
+            this.scrollTargetY -= deltaY * 0.8;  // Điều chỉnh vị trí mục tiêu để cuộn đến
         });
         // Thêm sự kiện cho con trỏ chuột
         this.input.on('pointermove', (pointer) => {
             if (pointer.isDown) {
                 // Nếu con trỏ chuột đang nhấn, cập nhật vị trí mục tiêu dựa trên vị trí chuột
-                this.scrollTargetY += pointer.velocity.y * 0.7;  // Tinh chỉnh hệ số để điều chỉnh độ nhạy
+                this.scrollTargetY += pointer.velocity.y * 0.8;  // Tinh chỉnh hệ số để điều chỉnh độ nhạy
             }
         });
     }
@@ -83,42 +83,50 @@ class leaderBoardPopup extends Phaser.Scene {
             this.scrollContainer.add(row);
             contentHeight += row.displayHeight;
 
-            // Thêm huy chương và thông tin người chơi cho 3 thứ hạng đầu
+            // Thêm huy chương cho 3 người chơi có thứ hạng đầu
             if (i === 0) {
                 const goldMedal = this.add.image(125, i * 70, 'roosterbattle', 'medal_1');
-                const playerTitle = this.add.text(width / 2 + 10, i * 60 - 20, this.apiData.title.toString(), {
-                    fontSize: '29px',
-                    fill: '#FFFFFF',
-                    fontFamily: 'Arial'
-                }).setOrigin(0.5, 0.5);
-                const ELO = this.add.text(width / 2 + 10, i * 60 + 20, 'ELO: ' + this.apiData.userId.toString(), {
-                    fontSize: '29px',
-                    fill: '#fcdf03',
-                    fontFamily: 'Arial'
-                }).setOrigin(0.5, 0.5);
-                const rankNumber1 = this.add.text(115, i * 80 - 20, (i + 1).toString(), {
-                    fontSize: '29px',
-                    fill: '#FFFFFF',
-                    fontFamily: 'Arial'
-                });
-                this.scrollContainer.add([goldMedal, playerTitle, ELO, rankNumber1]);
+                this.scrollContainer.add(goldMedal);
             } else if (i === 1) {
                 const silverMedal = this.add.image(125, i * 115, 'roosterbattle', 'medal_2');
-                const rankNumber2 = this.add.text(115, i * 100, (i + 1).toString(), {
-                    fontSize: '29px',
-                    fill: '#FFFFFF',
-                    fontFamily: 'Arial'
-                });
-                this.scrollContainer.add([silverMedal, rankNumber2]);
+                this.scrollContainer.add(silverMedal);
             } else if (i === 2) {
                 const bronzeMedal = this.add.image(125, i * 115, 'roosterbattle', 'medal_3');
-                const rankNumber3 = this.add.text(115, i * 105, (i + 1).toString(), {
-                    fontSize: '29px',
-                    fill: '#FFFFFF',
-                    fontFamily: 'Arial'
-                });
-                this.scrollContainer.add([bronzeMedal, rankNumber3]);
-            }
+                this.scrollContainer.add(bronzeMedal);
+            } 
+            
+            //Thêm số thứ tự của từng người chơi
+            const rankNumber = this.add.text(125, i * 115 - 5, (i + 1).toString(), {
+                fontSize: '29px',
+                fill: '#FFFFFF',
+                fontFamily: 'Arial'
+            }).setOrigin(0.5, 0.5);
+            this.scrollContainer.add(rankNumber);
+            if (i === 0) {
+                rankNumber.setStyle({ fill: '#eddf51'})
+            } else if (i === 1) {
+                rankNumber.setStyle({ fill: '#faf9f5'})
+            } else if (i === 2) {
+                rankNumber.setStyle({ fill: '#f2b757'})
+            } 
+
+            //Thêm tên của từng người chơi
+            const playerTittle = this.add.text(width / 2 + 10, i * 115 - 20, this.apiData.title.toString(), {
+                fontSize: '29px',
+                fill: '#FFFFFF',
+                fontFamily: 'Arial'
+            }).setOrigin(0.5, 0.5);
+            this.scrollContainer.add(playerTittle)
+
+            //Thêm ELO cho người chơi
+            const randomNumber = Phaser.Math.Between(1, 1000);
+            const ELO = this.add.text(width / 2 + 10, i * 115 + 20, "ELO:" + randomNumber.toString(), {
+                fontSize: '29px',
+                fill: '#FFFFFF',
+                fontFamily: 'Arial',
+                fill: '#fcdf03'
+            }).setOrigin(0.5, 0.5);
+            this.scrollContainer.add(ELO)
 
             // Add player rank row vào cuối cùng của bảng xếp hạng
             const rank_player = this.add.nineslice(width / 2, 1065, 'roosterbattle', 'rank_row_player_bg', 550, 0, 50, 50);
