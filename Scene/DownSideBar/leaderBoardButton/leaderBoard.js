@@ -18,10 +18,10 @@ class leaderBoard extends Phaser.Scene {
             color: '#FFFFFF',
             fontSize: '19px',
             fontFamily: 'Arial'
-        }).setOrigin(0.5,0.5);
+        }).setOrigin(0.5, 0.5);
     }
 
-    update() {}
+    update() { }
 }
 
 export default leaderBoard;

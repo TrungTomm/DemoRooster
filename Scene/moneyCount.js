@@ -12,10 +12,11 @@ class moneyCount extends Phaser.Scene {
         const token_rgold_big = this.add.nineslice(70, 60, 'roosterbattle', 'token_rgold_big', 70, 70, 3, 3, 3, 3);
 
         // //Tao tien
-        const money_up = this.add.text(width - 345, 2, '100', {
+        const money = this.add.text(150, 60, '1000', {
             color: '#FFFFFF',
+            fontSize: 29,
             fontFamily: 'Arial'
-        })
+        }).setOrigin(0.5,0.5);
     }
     update() { }
 }
